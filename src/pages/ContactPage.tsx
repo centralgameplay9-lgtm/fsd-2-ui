@@ -23,8 +23,8 @@ export function ContactPage() {
       <main className="flex-1">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 py-10">
           <motion.div initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} className="text-center mb-10">
-            <h1 className="text-3xl sm:text-4xl font-bold">Get in Touch</h1>
-            <p className="mt-2 text-slate-500 max-w-xl mx-auto">Have a question or need help? Our team is here for you. Reach out and we'll respond within 24 hours.</p>
+            <h1 className="text-3xl sm:text-4xl font-display font-medium">Get in Touch</h1>
+            <p className="mt-2 text-stone-500 max-w-xl mx-auto">Have a question or need help? Our team is here for you. Reach out and we'll respond within 24 hours.</p>
           </motion.div>
 
           <div className="grid lg:grid-cols-3 gap-4 mb-10">
@@ -39,7 +39,7 @@ export function ContactPage() {
                 </div>
                 <h3 className="font-semibold">{c.title}</h3>
                 <p className="text-sm text-primary-600 mt-1">{c.value}</p>
-                <p className="text-xs text-slate-500 mt-0.5">{c.desc}</p>
+                <p className="text-xs text-stone-500 mt-0.5">{c.desc}</p>
               </motion.div>
             ))}
           </div>
@@ -47,7 +47,7 @@ export function ContactPage() {
           <div className="grid lg:grid-cols-2 gap-6">
             {/* Form */}
             <motion.div initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.1 }} className="card p-6">
-              <h2 className="text-lg font-semibold mb-4">Send a Message</h2>
+              <h2 className="text-lg font-display font-medium mb-4">Send a Message</h2>
               <form onSubmit={handleSubmit} className="space-y-4">
                 <div className="grid sm:grid-cols-2 gap-4">
                   <div><label className="text-sm font-medium mb-1.5 block">Name</label><input type="text" required value={form.name} onChange={(e) => setForm({ ...form, name: e.target.value })} className="input-base" placeholder="Your name" /></div>
@@ -67,10 +67,10 @@ export function ContactPage() {
                   <div className="relative text-center">
                     <MapPin className="w-10 h-10 text-primary-600 mx-auto mb-2" />
                     <p className="text-sm font-medium">535 Mission Street</p>
-                    <p className="text-xs text-slate-500">San Francisco, CA 94105</p>
+                    <p className="text-xs text-stone-500">San Francisco, CA 94105</p>
                   </div>
                 </div>
-                <div className="p-4 flex items-center gap-2 text-sm text-slate-500">
+                <div className="p-4 flex items-center gap-2 text-sm text-stone-500">
                   <Clock className="w-4 h-4" /> Open Mon-Fri, 9:00 AM - 6:00 PM PST
                 </div>
               </motion.div>
@@ -82,9 +82,9 @@ export function ContactPage() {
                     <div key={i}>
                       <button onClick={() => setOpenFaq(openFaq === i ? null : i)} className="w-full flex items-center justify-between text-left">
                         <span className="text-sm font-medium">{faq.q}</span>
-                        <ChevronDown className={`w-4 h-4 text-slate-400 shrink-0 transition ${openFaq === i ? 'rotate-180' : ''}`} />
+                        <ChevronDown className={`w-4 h-4 text-stone-400 shrink-0 transition ${openFaq === i ? 'rotate-180' : ''}`} />
                       </button>
-                      {openFaq === i && <p className="text-xs text-slate-500 mt-2">{faq.a}</p>}
+                      {openFaq === i && <p className="text-xs text-stone-500 mt-2">{faq.a}</p>}
                     </div>
                   ))}
                 </div>

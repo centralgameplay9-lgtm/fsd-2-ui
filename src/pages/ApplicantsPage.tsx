@@ -48,19 +48,19 @@ export function ApplicantsPage() {
       {/* Toolbar */}
       <div className="card p-4 mb-4">
         <div className="flex flex-col sm:flex-row gap-3">
-          <div className="flex-1 flex items-center gap-2 px-3 rounded-md border border-slate-200 dark:border-slate-700">
-            <Search className="w-4 h-4 text-slate-400" />
+          <div className="flex-1 flex items-center gap-2 px-3 rounded-md border border-stone-200 dark:border-stone-700">
+            <Search className="w-4 h-4 text-stone-400" />
             <input type="text" value={search} onChange={(e) => setSearch(e.target.value)} placeholder="Search by name or skill..." className="w-full bg-transparent py-2 text-sm outline-none" />
           </div>
           <div className="flex gap-2 overflow-x-auto scrollbar-hide">
             {['All', 'Pending', 'Shortlisted', 'Accepted', 'Rejected'].map((s) => (
-              <button key={s} onClick={() => setStatusFilter(s)} className={cn('px-3 py-2 rounded-md text-sm font-medium whitespace-nowrap transition', statusFilter === s ? 'bg-primary-600 text-white' : 'border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-800')}>{s}</button>
+              <button key={s} onClick={() => setStatusFilter(s)} className={cn('px-3 py-2 rounded-md text-sm font-medium whitespace-nowrap transition', statusFilter === s ? 'bg-primary-600 text-white' : 'border border-stone-200 dark:border-stone-700 hover:bg-stone-50 dark:hover:bg-stone-800')}>{s}</button>
             ))}
           </div>
         </div>
       </div>
 
-      <p className="text-sm text-slate-500 mb-4">{filtered.length} applicant{filtered.length !== 1 ? 's' : ''}</p>
+      <p className="text-sm text-stone-500 mb-4">{filtered.length} applicant{filtered.length !== 1 ? 's' : ''}</p>
 
       {/* Applicant cards */}
       <div className="grid md:grid-cols-2 gap-4">
@@ -72,7 +72,7 @@ export function ApplicantsPage() {
                 <div className="flex items-start justify-between gap-2">
                   <div>
                     <h3 className="font-semibold">{app.name}</h3>
-                    <p className="text-xs text-slate-500 flex items-center gap-1 mt-0.5"><MapPin className="w-3 h-3" /> {app.location}</p>
+                    <p className="text-xs text-stone-500 flex items-center gap-1 mt-0.5"><MapPin className="w-3 h-3" /> {app.location}</p>
                   </div>
                   <div className="flex items-center gap-1.5">
                     <div className="flex items-center gap-1 px-2 py-1 rounded-md bg-success-50 dark:bg-success-900/20 text-success-700 dark:text-success-400">
@@ -81,7 +81,7 @@ export function ApplicantsPage() {
                     </div>
                   </div>
                 </div>
-                <div className="flex flex-wrap gap-x-4 gap-y-1 mt-2 text-xs text-slate-500">
+                <div className="flex flex-wrap gap-x-4 gap-y-1 mt-2 text-xs text-stone-500">
                   <span className="flex items-center gap-1"><BriefcaseIcon className="w-3 h-3" /> {app.experience}</span>
                   <span className="flex items-center gap-1"><GraduationCap className="w-3 h-3" /> {app.education.split(',')[0]}</span>
                 </div>
@@ -94,15 +94,15 @@ export function ApplicantsPage() {
               ))}
             </div>
 
-            <div className="flex items-center justify-between mt-4 pt-3 border-t border-slate-100 dark:border-slate-800/50">
+            <div className="flex items-center justify-between mt-4 pt-3 border-t border-stone-100 dark:border-stone-800/50">
               <div className="flex items-center gap-1.5">
                 <StatusBadge status={app.status} />
-                <span className="text-xs text-slate-400">Applied {app.appliedAt.toLocaleDateString('en-US', { month: 'short', day: 'numeric' })}</span>
+                <span className="text-xs text-stone-400">Applied {app.appliedAt.toLocaleDateString('en-US', { month: 'short', day: 'numeric' })}</span>
               </div>
               <div className="flex items-center gap-1">
-                <button onClick={() => toast(`Resume download started for ${app.name}`, 'success')} className="p-1.5 rounded-md hover:bg-slate-100 dark:hover:bg-slate-800 transition" title="Download Resume"><Download className="w-4 h-4 text-slate-500" /></button>
-                <button onClick={() => toast(`Message sent to ${app.name}`, 'success')} className="p-1.5 rounded-md hover:bg-slate-100 dark:hover:bg-slate-800 transition" title="Message"><MessageCircle className="w-4 h-4 text-slate-500" /></button>
-                <button onClick={() => toast(`Email sent to ${app.name}`, 'success')} className="p-1.5 rounded-md hover:bg-slate-100 dark:hover:bg-slate-800 transition" title="Email"><Mail className="w-4 h-4 text-slate-500" /></button>
+                <button onClick={() => toast(`Resume download started for ${app.name}`, 'success')} className="p-1.5 rounded-md hover:bg-stone-100 dark:hover:bg-stone-800 transition" title="Download Resume"><Download className="w-4 h-4 text-stone-500" /></button>
+                <button onClick={() => toast(`Message sent to ${app.name}`, 'success')} className="p-1.5 rounded-md hover:bg-stone-100 dark:hover:bg-stone-800 transition" title="Message"><MessageCircle className="w-4 h-4 text-stone-500" /></button>
+                <button onClick={() => toast(`Email sent to ${app.name}`, 'success')} className="p-1.5 rounded-md hover:bg-stone-100 dark:hover:bg-stone-800 transition" title="Email"><Mail className="w-4 h-4 text-stone-500" /></button>
               </div>
             </div>
 
@@ -121,7 +121,7 @@ export function ApplicantsPage() {
         <form onSubmit={(e) => { e.preventDefault(); toast('Interview scheduled! The candidate will be notified.', 'success'); setScheduleOpen(null); }} className="space-y-4">
           <div>
             <label className="text-sm font-medium mb-1.5 block">Candidate</label>
-            <div className="flex items-center gap-2 p-2.5 rounded-md bg-slate-50 dark:bg-slate-800/50">
+            <div className="flex items-center gap-2 p-2.5 rounded-md bg-stone-50 dark:bg-stone-800/50">
               {(() => {
                 const a = applicants.find((x) => x.id === scheduleOpen);
                 return a ? <><img src={a.avatar} alt="" className="w-8 h-8 rounded-full" /><span className="text-sm font-medium">{a.name}</span></> : null;

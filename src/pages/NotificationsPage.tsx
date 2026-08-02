@@ -59,17 +59,17 @@ export function NotificationsPage() {
       <div className="flex items-center justify-between mb-4">
         <div className="flex gap-2 overflow-x-auto scrollbar-hide">
           {['All', 'Unread', 'Application', 'Interview', 'Message', 'System'].map((f) => (
-            <button key={f} onClick={() => setFilter(f)} className={cn('px-3 py-2 rounded-md text-sm font-medium whitespace-nowrap transition', filter === f ? 'bg-primary-600 text-white' : 'border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-800')}>{f}</button>
+            <button key={f} onClick={() => setFilter(f)} className={cn('px-3 py-2 rounded-md text-sm font-medium whitespace-nowrap transition', filter === f ? 'bg-primary-600 text-white' : 'border border-stone-200 dark:border-stone-700 hover:bg-stone-50 dark:hover:bg-stone-800')}>{f}</button>
           ))}
         </div>
         <button onClick={markAllRead} className="btn-ghost text-xs whitespace-nowrap"><Check className="w-4 h-4" /> Mark all read</button>
       </div>
 
-      <div className="card divide-y divide-slate-100 dark:divide-slate-800/50">
+      <div className="card divide-y divide-stone-100 dark:divide-stone-800/50">
         {filtered.map((n, i) => {
           const Icon = typeIcons[n.type];
           return (
-            <motion.div key={n.id} initial={{ opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: i * 0.03 }} className={cn('flex items-start gap-3 p-4 hover:bg-slate-50/50 dark:hover:bg-slate-800/30 transition group', !n.read && 'bg-primary-50/30 dark:bg-primary-900/10')}>
+            <motion.div key={n.id} initial={{ opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: i * 0.03 }} className={cn('flex items-start gap-3 p-4 hover:bg-stone-50/50 dark:hover:bg-stone-800/30 transition group', !n.read && 'bg-primary-50/30 dark:bg-primary-900/10')}>
               <div className={cn('w-10 h-10 rounded-lg flex items-center justify-center shrink-0', typeColors[n.type])}>
                 <Icon className="w-5 h-5" />
               </div>
@@ -77,20 +77,20 @@ export function NotificationsPage() {
                 <div className="flex items-start justify-between gap-2">
                   <div>
                     <p className="text-sm font-semibold">{n.title}</p>
-                    <p className="text-sm text-slate-500 mt-0.5">{n.message}</p>
+                    <p className="text-sm text-stone-500 mt-0.5">{n.message}</p>
                   </div>
                   {!n.read && <span className="w-2 h-2 rounded-full bg-primary-500 mt-1.5 shrink-0" />}
                 </div>
                 <div className="flex items-center gap-3 mt-2">
-                  <span className="text-xs text-slate-400">{timeAgo(n.time)}</span>
+                  <span className="text-xs text-stone-400">{timeAgo(n.time)}</span>
                   {!n.read && <button onClick={() => markRead(n.id)} className="text-xs text-primary-600 font-medium hover:underline">Mark read</button>}
-                  <button onClick={() => remove(n.id)} className="text-xs text-slate-400 hover:text-danger-500 transition flex items-center gap-1 opacity-0 group-hover:opacity-100"><Trash2 className="w-3 h-3" /> Delete</button>
+                  <button onClick={() => remove(n.id)} className="text-xs text-stone-400 hover:text-danger-500 transition flex items-center gap-1 opacity-0 group-hover:opacity-100"><Trash2 className="w-3 h-3" /> Delete</button>
                 </div>
               </div>
             </motion.div>
           );
         })}
-        {filtered.length === 0 && <div className="p-12 text-center text-sm text-slate-500">No notifications to show.</div>}
+        {filtered.length === 0 && <div className="p-12 text-center text-sm text-stone-500">No notifications to show.</div>}
       </div>
     </DashboardLayout>
   );

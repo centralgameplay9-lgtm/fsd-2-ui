@@ -34,11 +34,11 @@ export function JobCard({ job, index = 0 }: { job: Job; index?: number }) {
       <Link to={`/jobs/${job.id}`} className="block group">
         <div className="card p-5 hover:shadow-soft-lg hover:border-primary-200 dark:hover:border-primary-800 transition-all duration-300">
           <div className="flex items-start gap-4">
-            <div className="w-12 h-12 rounded-lg bg-slate-100 dark:bg-slate-800 overflow-hidden shrink-0 flex items-center justify-center">
+            <div className="w-12 h-12 rounded-lg bg-stone-100 dark:bg-stone-800 overflow-hidden shrink-0 flex items-center justify-center">
               {company?.logo ? (
                 <img src={company.logo} alt={company.name} className="w-full h-full object-cover" />
               ) : (
-                <Briefcase className="w-6 h-6 text-slate-400" />
+                <Briefcase className="w-6 h-6 text-stone-400" />
               )}
             </div>
 
@@ -46,18 +46,18 @@ export function JobCard({ job, index = 0 }: { job: Job; index?: number }) {
               <div className="flex items-start justify-between gap-2">
                 <div>
                   <h3 className="text-base font-semibold group-hover:text-primary-600 transition line-clamp-1">{job.title}</h3>
-                  <p className="text-sm text-slate-500 mt-0.5">{company?.name}</p>
+                  <p className="text-sm text-stone-500 mt-0.5">{company?.name}</p>
                 </div>
                 <button
                   onClick={handleSave}
-                  className="p-1.5 rounded-md hover:bg-slate-100 dark:hover:bg-slate-800 transition shrink-0"
+                  className="p-1.5 rounded-md hover:bg-stone-100 dark:hover:bg-stone-800 transition shrink-0"
                   aria-label="Save job"
                 >
-                  <Bookmark className={`w-4 h-4 ${saved ? 'fill-primary-500 text-primary-500' : 'text-slate-400'}`} />
+                  <Bookmark className={`w-4 h-4 ${saved ? 'fill-primary-500 text-primary-500' : 'text-stone-400'}`} />
                 </button>
               </div>
 
-              <div className="flex flex-wrap items-center gap-x-4 gap-y-1 mt-2 text-xs text-slate-500">
+              <div className="flex flex-wrap items-center gap-x-4 gap-y-1 mt-2 text-xs text-stone-500">
                 <span className="flex items-center gap-1"><MapPin className="w-3.5 h-3.5" /> {job.location}</span>
                 <span className="flex items-center gap-1"><Briefcase className="w-3.5 h-3.5" /> {job.type}</span>
                 <span className="flex items-center gap-1"><DollarSign className="w-3.5 h-3.5" /> {formatSalary(job.salaryMin, job.salaryMax)}</span>
@@ -71,12 +71,12 @@ export function JobCard({ job, index = 0 }: { job: Job; index?: number }) {
                 {job.skills.length > 4 && <Badge variant="ghost" className="text-[11px]">+{job.skills.length - 4}</Badge>}
               </div>
 
-              <div className="flex items-center justify-between mt-4 pt-3 border-t border-slate-100 dark:border-slate-800/50">
+              <div className="flex items-center justify-between mt-4 pt-3 border-t border-stone-100 dark:border-stone-800/50">
                 <div className="flex items-center gap-2">
                   <Badge variant={job.workMode === 'Remote' ? 'success' : job.workMode === 'Hybrid' ? 'primary' : 'secondary'}>
                     {job.workMode}
                   </Badge>
-                  <span className="text-xs text-slate-400">{job.applicants} applicants</span>
+                  <span className="text-xs text-stone-400">{job.applicants} applicants</span>
                 </div>
                 <button
                   onClick={handleApply}

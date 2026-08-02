@@ -66,18 +66,18 @@ export function AuthPage({ mode }: { mode: AuthMode }) {
             <div className="w-9 h-9 rounded-lg bg-gradient-to-br from-primary-600 to-accent-500 flex items-center justify-center">
               <Briefcase className="w-5 h-5 text-white" />
             </div>
-            <span className="text-xl font-bold">HireHub</span>
+            <span className="text-xl font-display font-semibold tracking-tight">HireHub</span>
           </Link>
 
-          <h1 className="text-2xl font-bold">{titles[mode].title}</h1>
-          <p className="text-sm text-slate-500 mt-1">{titles[mode].subtitle}</p>
+          <h1 className="text-3xl font-display font-medium tracking-tight">{titles[mode].title}</h1>
+          <p className="text-sm text-stone-500 mt-1">{titles[mode].subtitle}</p>
 
           <form onSubmit={handleSubmit} className="mt-6 space-y-4">
             {mode === 'register' && (
               <div>
                 <label className="text-sm font-medium mb-1.5 block">Full Name</label>
                 <div className="relative">
-                  <User className="w-4 h-4 text-slate-400 absolute left-3 top-1/2 -translate-y-1/2" />
+                  <User className="w-4 h-4 text-stone-400 absolute left-3 top-1/2 -translate-y-1/2" />
                   <input type="text" required placeholder="John Doe" className="input-base pl-10" />
                 </div>
               </div>
@@ -87,7 +87,7 @@ export function AuthPage({ mode }: { mode: AuthMode }) {
               <div>
                 <label className="text-sm font-medium mb-1.5 block">Email</label>
                 <div className="relative">
-                  <Mail className="w-4 h-4 text-slate-400 absolute left-3 top-1/2 -translate-y-1/2" />
+                  <Mail className="w-4 h-4 text-stone-400 absolute left-3 top-1/2 -translate-y-1/2" />
                   <input type="email" required placeholder="you@email.com" className="input-base pl-10" />
                 </div>
               </div>
@@ -97,9 +97,9 @@ export function AuthPage({ mode }: { mode: AuthMode }) {
               <div>
                 <label className="text-sm font-medium mb-1.5 block">Password</label>
                 <div className="relative">
-                  <Lock className="w-4 h-4 text-slate-400 absolute left-3 top-1/2 -translate-y-1/2" />
+                  <Lock className="w-4 h-4 text-stone-400 absolute left-3 top-1/2 -translate-y-1/2" />
                   <input type={showPassword ? 'text' : 'password'} required value={password} onChange={(e) => setPassword(e.target.value)} placeholder="••••••••" className="input-base pl-10 pr-10" />
-                  <button type="button" onClick={() => setShowPassword(!showPassword)} className="absolute right-3 top-1/2 -translate-y-1/2 text-slate-400 hover:text-slate-600 transition">
+                  <button type="button" onClick={() => setShowPassword(!showPassword)} className="absolute right-3 top-1/2 -translate-y-1/2 text-stone-400 hover:text-stone-600 transition">
                     {showPassword ? <EyeOff className="w-4 h-4" /> : <Eye className="w-4 h-4" />}
                   </button>
                 </div>
@@ -107,10 +107,10 @@ export function AuthPage({ mode }: { mode: AuthMode }) {
                   <div className="mt-2">
                     <div className="flex gap-1">
                       {[0, 1, 2, 3].map((i) => (
-                        <div key={i} className={cn('h-1.5 flex-1 rounded-full transition', i < passwordStrength ? strengthColors[passwordStrength] : 'bg-slate-200 dark:bg-slate-800')} />
+                        <div key={i} className={cn('h-1.5 flex-1 rounded-full transition', i < passwordStrength ? strengthColors[passwordStrength] : 'bg-stone-200 dark:bg-stone-800')} />
                       ))}
                     </div>
-                    <p className="text-xs text-slate-500 mt-1">{strengthLabels[passwordStrength]}</p>
+                    <p className="text-xs text-stone-500 mt-1">{strengthLabels[passwordStrength]}</p>
                   </div>
                 )}
               </div>
@@ -121,7 +121,7 @@ export function AuthPage({ mode }: { mode: AuthMode }) {
                 <div>
                   <label className="text-sm font-medium mb-1.5 block">Confirm Password</label>
                   <div className="relative">
-                    <Lock className="w-4 h-4 text-slate-400 absolute left-3 top-1/2 -translate-y-1/2" />
+                    <Lock className="w-4 h-4 text-stone-400 absolute left-3 top-1/2 -translate-y-1/2" />
                     <input type="password" required value={confirmPassword} onChange={(e) => setConfirmPassword(e.target.value)} placeholder="••••••••" className="input-base pl-10" />
                   </div>
                 </div>
@@ -129,7 +129,7 @@ export function AuthPage({ mode }: { mode: AuthMode }) {
                   <label className="text-sm font-medium mb-2 block">Account Type</label>
                   <div className="grid grid-cols-3 gap-2">
                     {(['Job Seeker', 'Employer', 'Admin'] as Role[]).map((r) => (
-                      <button key={r} type="button" onClick={() => setAccountType(r)} className={cn('flex flex-col items-center gap-1.5 py-3 rounded-md border text-xs font-medium transition', accountType === r ? 'border-primary-500 bg-primary-50 dark:bg-primary-900/30 text-primary-600' : 'border-slate-200 dark:border-slate-700 hover:border-primary-300')}>
+                      <button key={r} type="button" onClick={() => setAccountType(r)} className={cn('flex flex-col items-center gap-1.5 py-3 rounded-md border text-xs font-medium transition', accountType === r ? 'border-primary-500 bg-primary-50 dark:bg-primary-900/30 text-primary-600' : 'border-stone-200 dark:border-stone-700 hover:border-primary-300')}>
                         {r === 'Job Seeker' ? <User className="w-4 h-4" /> : r === 'Employer' ? <Building2 className="w-4 h-4" /> : <Briefcase className="w-4 h-4" />}
                         {r}
                       </button>
@@ -142,7 +142,7 @@ export function AuthPage({ mode }: { mode: AuthMode }) {
             {mode === 'login' && (
               <div className="flex items-center justify-between">
                 <label className="flex items-center gap-2 text-sm cursor-pointer">
-                  <input type="checkbox" className="w-4 h-4 rounded accent-primary-600" /> <span className="text-slate-600 dark:text-slate-300">Remember me</span>
+                  <input type="checkbox" className="w-4 h-4 rounded accent-primary-600" /> <span className="text-stone-600 dark:text-stone-300">Remember me</span>
                 </label>
                 <Link to="/forgot-password" className="text-sm text-primary-600 hover:underline">Forgot password?</Link>
               </div>
@@ -154,9 +154,9 @@ export function AuthPage({ mode }: { mode: AuthMode }) {
           {(mode === 'login' || mode === 'register') && (
             <>
               <div className="flex items-center gap-3 my-5">
-                <div className="flex-1 h-px bg-slate-200 dark:bg-slate-800" />
-                <span className="text-xs text-slate-400">or continue with</span>
-                <div className="flex-1 h-px bg-slate-200 dark:bg-slate-800" />
+                <div className="flex-1 h-px bg-stone-200 dark:bg-stone-800" />
+                <span className="text-xs text-stone-400">or continue with</span>
+                <div className="flex-1 h-px bg-stone-200 dark:bg-stone-800" />
               </div>
               <div className="grid grid-cols-2 gap-3">
                 <button onClick={() => toast('Google sign-in (demo)', 'info')} className="btn-outline justify-center py-2.5"><Chrome className="w-4 h-4" /> Google</button>
@@ -165,7 +165,7 @@ export function AuthPage({ mode }: { mode: AuthMode }) {
             </>
           )}
 
-          <p className="text-center text-sm text-slate-500 mt-6">
+          <p className="text-center text-sm text-stone-500 mt-6">
             {mode === 'login' && <>Don't have an account? <Link to="/register" className="text-primary-600 font-medium hover:underline">Sign up</Link></>}
             {mode === 'register' && <>Already have an account? <Link to="/login" className="text-primary-600 font-medium hover:underline">Sign in</Link></>}
             {mode === 'forgot' && <Link to="/login" className="text-primary-600 font-medium hover:underline">Back to sign in</Link>}
@@ -181,7 +181,7 @@ export function AuthPage({ mode }: { mode: AuthMode }) {
           <div className="absolute bottom-20 right-20 w-96 h-96 bg-accent-300 rounded-full blur-3xl animate-float" style={{ animationDelay: '2s' }} />
         </div>
         <div className="relative text-white max-w-md">
-          <h2 className="text-3xl font-bold leading-tight">Your dream career<br />starts here.</h2>
+          <h2 className="text-3xl font-display font-medium leading-tight">Your dream career<br />starts here.</h2>
           <p className="mt-4 text-white/80">Join 850,000+ professionals who found their next role through HireHub. Browse 12,500+ jobs from top companies.</p>
           <div className="mt-8 space-y-3">
             {['Free for job seekers', 'Track applications in real-time', 'Get matched with top employers', 'Apply with one click'].map((f) => (

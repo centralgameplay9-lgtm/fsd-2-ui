@@ -101,7 +101,7 @@ export function JobSearchPage() {
           {dateFilters.map((d) => (
             <label key={d} className="flex items-center gap-2 cursor-pointer group">
               <input type="radio" name="date" checked={dateFilter === d} onChange={() => { setDateFilter(d); setCurrentPage(1); }} className="w-4 h-4 accent-primary-600" />
-              <span className="text-sm text-slate-600 dark:text-slate-300 group-hover:text-slate-900 dark:group-hover:text-white transition">{d}</span>
+              <span className="text-sm text-stone-600 dark:text-stone-300 group-hover:text-stone-900 dark:group-hover:text-white transition">{d}</span>
             </label>
           ))}
         </div>
@@ -113,7 +113,7 @@ export function JobSearchPage() {
           {jobTypes.map((t) => (
             <label key={t} className="flex items-center gap-2 cursor-pointer group">
               <input type="checkbox" checked={selectedTypes.includes(t)} onChange={() => toggle(t, selectedTypes, setSelectedTypes)} className="w-4 h-4 rounded accent-primary-600" />
-              <span className="text-sm text-slate-600 dark:text-slate-300 group-hover:text-slate-900 dark:group-hover:text-white transition">{t}</span>
+              <span className="text-sm text-stone-600 dark:text-stone-300 group-hover:text-stone-900 dark:group-hover:text-white transition">{t}</span>
             </label>
           ))}
         </div>
@@ -125,7 +125,7 @@ export function JobSearchPage() {
           {workModes.map((m) => (
             <label key={m} className="flex items-center gap-2 cursor-pointer group">
               <input type="checkbox" checked={selectedModes.includes(m)} onChange={() => toggle(m, selectedModes, setSelectedModes)} className="w-4 h-4 rounded accent-primary-600" />
-              <span className="text-sm text-slate-600 dark:text-slate-300 group-hover:text-slate-900 dark:group-hover:text-white transition">{m}</span>
+              <span className="text-sm text-stone-600 dark:text-stone-300 group-hover:text-stone-900 dark:group-hover:text-white transition">{m}</span>
             </label>
           ))}
         </div>
@@ -137,7 +137,7 @@ export function JobSearchPage() {
           {experienceLevels.map((e) => (
             <label key={e} className="flex items-center gap-2 cursor-pointer group">
               <input type="checkbox" checked={selectedExp.includes(e)} onChange={() => toggle(e, selectedExp, setSelectedExp)} className="w-4 h-4 rounded accent-primary-600" />
-              <span className="text-sm text-slate-600 dark:text-slate-300 group-hover:text-slate-900 dark:group-hover:text-white transition">{e}</span>
+              <span className="text-sm text-stone-600 dark:text-stone-300 group-hover:text-stone-900 dark:group-hover:text-white transition">{e}</span>
             </label>
           ))}
         </div>
@@ -149,7 +149,7 @@ export function JobSearchPage() {
           {salaryRanges.map((r, i) => (
             <label key={r.label} className="flex items-center gap-2 cursor-pointer group">
               <input type="radio" name="salary" checked={selectedSalary === i} onChange={() => { setSelectedSalary(i); setCurrentPage(1); }} className="w-4 h-4 accent-primary-600" />
-              <span className="text-sm text-slate-600 dark:text-slate-300 group-hover:text-slate-900 dark:group-hover:text-white transition">{r.label}</span>
+              <span className="text-sm text-stone-600 dark:text-stone-300 group-hover:text-stone-900 dark:group-hover:text-white transition">{r.label}</span>
             </label>
           ))}
         </div>
@@ -161,7 +161,7 @@ export function JobSearchPage() {
           {companies.map((c) => (
             <label key={c.id} className="flex items-center gap-2 cursor-pointer group">
               <input type="checkbox" checked={selectedCompanies.includes(c.id)} onChange={() => toggle(c.id, selectedCompanies, setSelectedCompanies)} className="w-4 h-4 rounded accent-primary-600" />
-              <span className="text-sm text-slate-600 dark:text-slate-300 group-hover:text-slate-900 dark:group-hover:text-white transition">{c.name}</span>
+              <span className="text-sm text-stone-600 dark:text-stone-300 group-hover:text-stone-900 dark:group-hover:text-white transition">{c.name}</span>
             </label>
           ))}
         </div>
@@ -178,7 +178,7 @@ export function JobSearchPage() {
                 'px-2.5 py-1 rounded-md text-xs font-medium border transition',
                 selectedSkills.includes(s)
                   ? 'bg-primary-600 text-white border-primary-600'
-                  : 'border-slate-200 dark:border-slate-700 text-slate-600 dark:text-slate-300 hover:border-primary-300 dark:hover:border-primary-700'
+                  : 'border-stone-200 dark:border-stone-700 text-stone-600 dark:text-stone-300 hover:border-primary-300 dark:hover:border-primary-700'
               )}
             >
               {s}
@@ -194,13 +194,13 @@ export function JobSearchPage() {
       {/* Search bar */}
       <div className="card p-2 mb-6 flex flex-col sm:flex-row gap-2">
         <div className="flex-1 flex items-center gap-2 px-3">
-          <Search className="w-5 h-5 text-slate-400 shrink-0" />
-          <input type="text" value={search} onChange={(e) => { setSearch(e.target.value); setCurrentPage(1); }} placeholder="Job title, keyword, or company" className="w-full bg-transparent py-2.5 text-sm outline-none placeholder:text-slate-400" />
+          <Search className="w-5 h-5 text-stone-400 shrink-0" />
+          <input type="text" value={search} onChange={(e) => { setSearch(e.target.value); setCurrentPage(1); }} placeholder="Job title, keyword, or company" className="w-full bg-transparent py-2.5 text-sm outline-none placeholder:text-stone-400" />
         </div>
-        <div className="sm:w-px h-px sm:h-auto bg-slate-200 dark:bg-slate-700" />
+        <div className="sm:w-px h-px sm:h-auto bg-stone-200 dark:bg-stone-700" />
         <div className="flex-1 flex items-center gap-2 px-3">
-          <MapPin className="w-5 h-5 text-slate-400 shrink-0" />
-          <input type="text" value={location} onChange={(e) => { setLocation(e.target.value); setCurrentPage(1); }} placeholder="Location" className="w-full bg-transparent py-2.5 text-sm outline-none placeholder:text-slate-400" />
+          <MapPin className="w-5 h-5 text-stone-400 shrink-0" />
+          <input type="text" value={location} onChange={(e) => { setLocation(e.target.value); setCurrentPage(1); }} placeholder="Location" className="w-full bg-transparent py-2.5 text-sm outline-none placeholder:text-stone-400" />
         </div>
       </div>
 
@@ -216,10 +216,10 @@ export function JobSearchPage() {
         <div className="flex-1 min-w-0">
           <div className="flex items-center justify-between mb-4">
             <div>
-              <h1 className="text-xl font-bold">
+              <h1 className="text-xl font-display font-medium">
                 {loading ? 'Searching...' : `${filtered.length} job${filtered.length !== 1 ? 's' : ''} found`}
               </h1>
-              <p className="text-sm text-slate-500 mt-0.5">Find your next opportunity</p>
+              <p className="text-sm text-stone-500 mt-0.5">Find your next opportunity</p>
             </div>
             <div className="flex items-center gap-2">
               <button onClick={() => setShowMobileFilters(true)} className="lg:hidden btn-secondary text-xs px-3 py-2">
@@ -229,13 +229,13 @@ export function JobSearchPage() {
                 <select
                   value={sortBy}
                   onChange={(e) => setSortBy(e.target.value)}
-                  className="appearance-none rounded-md border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 pl-3 pr-8 py-2 text-sm font-medium outline-none cursor-pointer focus:border-primary-500"
+                  className="appearance-none rounded-md border border-stone-200 dark:border-stone-700 bg-white dark:bg-stone-900 pl-3 pr-8 py-2 text-sm font-medium outline-none cursor-pointer focus:border-primary-500"
                 >
                   <option value="relevance">Most Relevant</option>
                   <option value="recent">Most Recent</option>
                   <option value="salary">Highest Salary</option>
                 </select>
-                <ChevronDown className="w-4 h-4 text-slate-400 absolute right-2 top-1/2 -translate-y-1/2 pointer-events-none" />
+                <ChevronDown className="w-4 h-4 text-stone-400 absolute right-2 top-1/2 -translate-y-1/2 pointer-events-none" />
               </div>
             </div>
           </div>
@@ -269,7 +269,7 @@ export function JobSearchPage() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
-          className="fixed inset-0 z-50 bg-slate-900/50 backdrop-blur-sm lg:hidden"
+          className="fixed inset-0 z-50 bg-stone-900/50 backdrop-blur-sm lg:hidden"
           onClick={() => setShowMobileFilters(false)}
         >
           <motion.div
@@ -277,12 +277,12 @@ export function JobSearchPage() {
             animate={{ x: 0 }}
             exit={{ x: '-100%' }}
             transition={{ type: 'spring', stiffness: 400, damping: 35 }}
-            className="absolute top-0 left-0 bottom-0 w-80 max-w-[85vw] bg-white dark:bg-slate-900 p-5 overflow-y-auto"
+            className="absolute top-0 left-0 bottom-0 w-80 max-w-[85vw] bg-white dark:bg-stone-900 p-5 overflow-y-auto"
             onClick={(e) => e.stopPropagation()}
           >
             <div className="flex items-center justify-between mb-5">
               <h3 className="font-semibold">Filters</h3>
-              <button onClick={() => setShowMobileFilters(false)} className="p-1 rounded-md hover:bg-slate-100 dark:hover:bg-slate-800">
+              <button onClick={() => setShowMobileFilters(false)} className="p-1 rounded-md hover:bg-stone-100 dark:hover:bg-stone-800">
                 <X className="w-5 h-5" />
               </button>
             </div>
@@ -299,7 +299,7 @@ export function JobSearchPage() {
 
 function FilterSection({ title, children }: { title: string; children: React.ReactNode }) {
   return (
-    <div className="pb-5 border-b border-slate-100 dark:border-slate-800/50 last:border-0 last:pb-0">
+    <div className="pb-5 border-b border-stone-100 dark:border-stone-800/50 last:border-0 last:pb-0">
       <h4 className="text-sm font-semibold mb-3">{title}</h4>
       {children}
     </div>

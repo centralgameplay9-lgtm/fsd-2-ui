@@ -42,7 +42,7 @@ export function Navbar() {
   };
 
   return (
-    <header className="sticky top-0 z-50 glass-strong border-b border-slate-200/60 dark:border-slate-800/60">
+    <header className="sticky top-0 z-50 glass-strong border-b border-stone-200/60 dark:border-stone-800/60">
       <nav className="max-w-7xl mx-auto px-4 sm:px-6">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
@@ -50,7 +50,7 @@ export function Navbar() {
             <div className="w-9 h-9 rounded-lg bg-gradient-to-br from-primary-600 to-accent-500 flex items-center justify-center shadow-soft">
               <Briefcase className="w-5 h-5 text-white" />
             </div>
-            <span className="text-xl font-bold tracking-tight">HireHub</span>
+            <span className="text-xl font-display font-semibold tracking-tight">HireHub</span>
           </Link>
 
           {/* Desktop nav */}
@@ -63,7 +63,7 @@ export function Navbar() {
                   'px-3 py-2 rounded-md text-sm font-medium transition',
                   isActive(link.path)
                     ? 'text-primary-600 bg-primary-50 dark:bg-primary-900/30'
-                    : 'text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-slate-800'
+                    : 'text-stone-600 dark:text-stone-300 hover:text-stone-900 dark:hover:text-white hover:bg-stone-100 dark:hover:bg-stone-800'
                 )}
               >
                 {link.label}
@@ -77,10 +77,10 @@ export function Navbar() {
             <div className="relative hidden sm:block">
               <button
                 onClick={() => setRoleOpen((o) => !o)}
-                className="flex items-center gap-1.5 px-3 py-2 rounded-md text-sm font-medium border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-800 transition"
+                className="flex items-center gap-1.5 px-3 py-2 rounded-md text-sm font-medium border border-stone-200 dark:border-stone-700 hover:bg-stone-50 dark:hover:bg-stone-800 transition"
               >
                 <span className={cn('font-semibold', roleColors[role])}>{role}</span>
-                <ChevronDown className="w-4 h-4 text-slate-400" />
+                <ChevronDown className="w-4 h-4 text-stone-400" />
               </button>
               <AnimatePresence>
                 {roleOpen && (
@@ -98,7 +98,7 @@ export function Navbar() {
                           onClick={() => handleRoleChange(r)}
                           className={cn(
                             'w-full flex items-center gap-2 px-3 py-2 rounded-md text-sm transition',
-                            role === r ? 'bg-primary-50 dark:bg-primary-900/30 text-primary-600' : 'hover:bg-slate-100 dark:hover:bg-slate-800'
+                            role === r ? 'bg-primary-50 dark:bg-primary-900/30 text-primary-600' : 'hover:bg-stone-100 dark:hover:bg-stone-800'
                           )}
                         >
                           {r === 'Job Seeker' && <User className="w-4 h-4" />}
@@ -117,7 +117,7 @@ export function Navbar() {
             <div className="relative">
               <button
                 onClick={() => setNotifOpen((o) => !o)}
-                className="relative p-2 rounded-md hover:bg-slate-100 dark:hover:bg-slate-800 transition"
+                className="relative p-2 rounded-md hover:bg-stone-100 dark:hover:bg-stone-800 transition"
               >
                 <Bell className="w-5 h-5" />
                 {unreadCount > 0 && (
@@ -136,7 +136,7 @@ export function Navbar() {
                       exit={{ opacity: 0, y: 8 }}
                       className="absolute right-0 mt-2 w-80 sm:w-96 z-20 card shadow-soft-lg max-h-96 overflow-y-auto"
                     >
-                      <div className="px-4 py-3 border-b border-slate-200 dark:border-slate-800 flex items-center justify-between">
+                      <div className="px-4 py-3 border-b border-stone-200 dark:border-stone-800 flex items-center justify-between">
                         <span className="font-semibold text-sm">Notifications</span>
                         <span className="text-xs text-primary-600 font-medium cursor-pointer hover:underline">Mark all read</span>
                       </div>
@@ -144,7 +144,7 @@ export function Navbar() {
                         <div
                           key={n.id}
                           className={cn(
-                            'px-4 py-3 border-b border-slate-100 dark:border-slate-800/50 hover:bg-slate-50 dark:hover:bg-slate-800/50 transition cursor-pointer',
+                            'px-4 py-3 border-b border-stone-100 dark:border-stone-800/50 hover:bg-stone-50 dark:hover:bg-stone-800/50 transition cursor-pointer',
                             !n.read && 'bg-primary-50/40 dark:bg-primary-900/10'
                           )}
                         >
@@ -152,12 +152,12 @@ export function Navbar() {
                             {!n.read && <span className="w-2 h-2 rounded-full bg-primary-500 mt-1.5 shrink-0" />}
                             <div className="flex-1 min-w-0">
                               <p className="text-sm font-medium">{n.title}</p>
-                              <p className="text-xs text-slate-500 mt-0.5 line-clamp-2">{n.message}</p>
+                              <p className="text-xs text-stone-500 mt-0.5 line-clamp-2">{n.message}</p>
                             </div>
                           </div>
                         </div>
                       ))}
-                      <Link to="/notifications" onClick={() => setNotifOpen(false)} className="block py-2.5 text-center text-sm text-primary-600 font-medium hover:bg-slate-50 dark:hover:bg-slate-800/50 transition">
+                      <Link to="/notifications" onClick={() => setNotifOpen(false)} className="block py-2.5 text-center text-sm text-primary-600 font-medium hover:bg-stone-50 dark:hover:bg-stone-800/50 transition">
                         View all notifications
                       </Link>
                     </motion.div>
@@ -167,7 +167,7 @@ export function Navbar() {
             </div>
 
             {/* Theme toggle */}
-            <button onClick={toggle} className="p-2 rounded-md hover:bg-slate-100 dark:hover:bg-slate-800 transition">
+            <button onClick={toggle} className="p-2 rounded-md hover:bg-stone-100 dark:hover:bg-stone-800 transition">
               {theme === 'light' ? <Moon className="w-5 h-5" /> : <Sun className="w-5 h-5" />}
             </button>
 
@@ -177,7 +177,7 @@ export function Navbar() {
                 <img
                   src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=80&h=80&fit=crop&crop=entropy&q=80"
                   alt="Profile"
-                  className="w-8 h-8 rounded-full object-cover ring-2 ring-white dark:ring-slate-800"
+                  className="w-8 h-8 rounded-full object-cover ring-2 ring-white dark:ring-stone-800"
                 />
               </button>
               <AnimatePresence>
@@ -190,20 +190,20 @@ export function Navbar() {
                       exit={{ opacity: 0, y: 8 }}
                       className="absolute right-0 mt-2 w-56 z-20 card p-1.5 shadow-soft-lg"
                     >
-                      <div className="px-3 py-2 border-b border-slate-200 dark:border-slate-800 mb-1">
+                      <div className="px-3 py-2 border-b border-stone-200 dark:border-stone-800 mb-1">
                         <p className="text-sm font-semibold">Jessica Williams</p>
-                        <p className="text-xs text-slate-500">jessica.williams@email.com</p>
+                        <p className="text-xs text-stone-500">jessica.williams@email.com</p>
                       </div>
-                      <Link to="/dashboard" onClick={() => setProfileOpen(false)} className="flex items-center gap-2 px-3 py-2 rounded-md text-sm hover:bg-slate-100 dark:hover:bg-slate-800 transition">
+                      <Link to="/dashboard" onClick={() => setProfileOpen(false)} className="flex items-center gap-2 px-3 py-2 rounded-md text-sm hover:bg-stone-100 dark:hover:bg-stone-800 transition">
                         <LayoutDashboard className="w-4 h-4" /> Dashboard
                       </Link>
-                      <Link to="/profile" onClick={() => setProfileOpen(false)} className="flex items-center gap-2 px-3 py-2 rounded-md text-sm hover:bg-slate-100 dark:hover:bg-slate-800 transition">
+                      <Link to="/profile" onClick={() => setProfileOpen(false)} className="flex items-center gap-2 px-3 py-2 rounded-md text-sm hover:bg-stone-100 dark:hover:bg-stone-800 transition">
                         <User className="w-4 h-4" /> My Profile
                       </Link>
-                      <Link to="/settings" onClick={() => setProfileOpen(false)} className="flex items-center gap-2 px-3 py-2 rounded-md text-sm hover:bg-slate-100 dark:hover:bg-slate-800 transition">
+                      <Link to="/settings" onClick={() => setProfileOpen(false)} className="flex items-center gap-2 px-3 py-2 rounded-md text-sm hover:bg-stone-100 dark:hover:bg-stone-800 transition">
                         <Settings className="w-4 h-4" /> Settings
                       </Link>
-                      <div className="border-t border-slate-200 dark:border-slate-800 mt-1 pt-1">
+                      <div className="border-t border-stone-200 dark:border-stone-800 mt-1 pt-1">
                         <Link to="/login" onClick={() => setProfileOpen(false)} className="flex items-center gap-2 px-3 py-2 rounded-md text-sm text-danger-600 hover:bg-danger-50 dark:hover:bg-danger-900/20 transition">
                           <LogOut className="w-4 h-4" /> Sign Out
                         </Link>
@@ -215,7 +215,7 @@ export function Navbar() {
             </div>
 
             {/* Mobile menu */}
-            <button onClick={() => setMobileOpen(true)} className="md:hidden p-2 rounded-md hover:bg-slate-100 dark:hover:bg-slate-800 transition">
+            <button onClick={() => setMobileOpen(true)} className="md:hidden p-2 rounded-md hover:bg-stone-100 dark:hover:bg-stone-800 transition">
               <Menu className="w-5 h-5" />
             </button>
           </div>
@@ -230,7 +230,7 @@ export function Navbar() {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
-              className="fixed inset-0 z-50 bg-slate-900/50 backdrop-blur-sm md:hidden"
+              className="fixed inset-0 z-50 bg-stone-900/50 backdrop-blur-sm md:hidden"
               onClick={() => setMobileOpen(false)}
             />
             <motion.div
@@ -238,11 +238,11 @@ export function Navbar() {
               animate={{ x: 0 }}
               exit={{ x: '100%' }}
               transition={{ type: 'spring', stiffness: 400, damping: 35 }}
-              className="fixed top-0 right-0 bottom-0 z-50 w-72 bg-white dark:bg-slate-900 shadow-soft-lg md:hidden p-5 overflow-y-auto"
+              className="fixed top-0 right-0 bottom-0 z-50 w-72 bg-white dark:bg-stone-900 shadow-soft-lg md:hidden p-5 overflow-y-auto"
             >
               <div className="flex items-center justify-between mb-6">
                 <span className="font-semibold">Menu</span>
-                <button onClick={() => setMobileOpen(false)} className="p-1 rounded-md hover:bg-slate-100 dark:hover:bg-slate-800">
+                <button onClick={() => setMobileOpen(false)} className="p-1 rounded-md hover:bg-stone-100 dark:hover:bg-stone-800">
                   <X className="w-5 h-5" />
                 </button>
               </div>
@@ -254,21 +254,21 @@ export function Navbar() {
                     onClick={() => setMobileOpen(false)}
                     className={cn(
                       'block px-3 py-2.5 rounded-md text-sm font-medium transition',
-                      isActive(link.path) ? 'text-primary-600 bg-primary-50 dark:bg-primary-900/30' : 'hover:bg-slate-100 dark:hover:bg-slate-800'
+                      isActive(link.path) ? 'text-primary-600 bg-primary-50 dark:bg-primary-900/30' : 'hover:bg-stone-100 dark:hover:bg-stone-800'
                     )}
                   >
                     {link.label}
                   </Link>
                 ))}
-                <div className="pt-3 mt-3 border-t border-slate-200 dark:border-slate-800">
-                  <p className="px-3 text-xs font-semibold text-slate-400 uppercase mb-2">Switch Role</p>
+                <div className="pt-3 mt-3 border-t border-stone-200 dark:border-stone-800">
+                  <p className="px-3 text-xs font-semibold text-stone-400 uppercase mb-2">Switch Role</p>
                   {(['Job Seeker', 'Employer', 'Admin'] as Role[]).map((r) => (
                     <button
                       key={r}
                       onClick={() => { handleRoleChange(r); setMobileOpen(false); }}
                       className={cn(
                         'w-full flex items-center gap-2 px-3 py-2.5 rounded-md text-sm transition',
-                        role === r ? 'bg-primary-50 dark:bg-primary-900/30 text-primary-600' : 'hover:bg-slate-100 dark:hover:bg-slate-800'
+                        role === r ? 'bg-primary-50 dark:bg-primary-900/30 text-primary-600' : 'hover:bg-stone-100 dark:hover:bg-stone-800'
                       )}
                     >
                       {r === 'Job Seeker' && <User className="w-4 h-4" />}

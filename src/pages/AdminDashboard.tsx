@@ -50,8 +50,8 @@ export function AdminDashboard() {
                 {stat.change}
               </span>
             </div>
-            <p className="text-2xl font-bold">{stat.value}</p>
-            <p className="text-xs text-slate-500 mt-0.5">{stat.label}</p>
+            <p className="text-2xl font-display font-semibold">{stat.value}</p>
+            <p className="text-xs text-stone-500 mt-0.5">{stat.label}</p>
           </motion.div>
         ))}
       </div>
@@ -63,7 +63,7 @@ export function AdminDashboard() {
           <div className="flex items-center justify-between mb-5">
             <div>
               <h3 className="font-semibold">User Growth</h3>
-              <p className="text-xs text-slate-500 mt-0.5">Monthly active users vs employers</p>
+              <p className="text-xs text-stone-500 mt-0.5">Monthly active users vs employers</p>
             </div>
             <Badge variant="success"><TrendingUp className="w-3 h-3" /> Growing</Badge>
           </div>
@@ -88,11 +88,11 @@ export function AdminDashboard() {
                     <span className="absolute -top-5 left-1/2 -translate-x-1/2 text-[10px] font-semibold opacity-0 group-hover:opacity-100 transition whitespace-nowrap">{d.employers}</span>
                   </motion.div>
                 </div>
-                <span className="text-[10px] text-slate-500">{d.month}</span>
+                <span className="text-[10px] text-stone-500">{d.month}</span>
               </div>
             ))}
           </div>
-          <div className="flex items-center gap-4 mt-4 pt-3 border-t border-slate-100 dark:border-slate-800/50">
+          <div className="flex items-center gap-4 mt-4 pt-3 border-t border-stone-100 dark:border-stone-800/50">
             <span className="flex items-center gap-1.5 text-xs"><span className="w-3 h-3 rounded bg-primary-500" /> Users</span>
             <span className="flex items-center gap-1.5 text-xs"><span className="w-3 h-3 rounded bg-accent-500" /> Employers</span>
           </div>
@@ -108,9 +108,9 @@ export function AdminDashboard() {
                 <div key={cat.name}>
                   <div className="flex items-center justify-between mb-1">
                     <span className="text-sm font-medium">{cat.name}</span>
-                    <span className="text-xs text-slate-500">{cat.value} jobs</span>
+                    <span className="text-xs text-stone-500">{cat.value} jobs</span>
                   </div>
-                  <div className="w-full h-2 rounded-full bg-slate-100 dark:bg-slate-800 overflow-hidden">
+                  <div className="w-full h-2 rounded-full bg-stone-100 dark:bg-stone-800 overflow-hidden">
                     <motion.div initial={{ width: 0 }} animate={{ width: `${(cat.value / max) * 100}%` }} transition={{ delay: 0.2 + i * 0.05, duration: 0.5 }} className="h-full rounded-full bg-gradient-to-r from-primary-600 to-accent-500" />
                   </div>
                 </div>
@@ -133,11 +133,11 @@ export function AdminDashboard() {
                 <img src={u.avatar} alt={u.name} className="w-9 h-9 rounded-full object-cover shrink-0" />
                 <div className="flex-1 min-w-0">
                   <p className="text-sm font-medium truncate">{u.name}</p>
-                  <p className="text-xs text-slate-500">{u.email}</p>
+                  <p className="text-xs text-stone-500">{u.email}</p>
                 </div>
                 <div className="text-right shrink-0">
                   <Badge variant={u.role === 'Employer' ? 'primary' : 'secondary'} className="text-[10px]">{u.role}</Badge>
-                  <p className="text-[10px] text-slate-400 mt-0.5">{formatDate(u.joined)}</p>
+                  <p className="text-[10px] text-stone-400 mt-0.5">{formatDate(u.joined)}</p>
                 </div>
               </div>
             ))}
@@ -151,13 +151,13 @@ export function AdminDashboard() {
           </div>
           <div className="space-y-3">
             {adminReports.map((r) => (
-              <div key={r.id} className="flex items-center gap-3 p-3 rounded-md border border-slate-200 dark:border-slate-800">
+              <div key={r.id} className="flex items-center gap-3 p-3 rounded-md border border-stone-200 dark:border-stone-800">
                 <div className={cn('w-8 h-8 rounded-md flex items-center justify-center shrink-0', r.status === 'Pending' ? 'bg-warning-100 dark:bg-warning-900/30 text-warning-600' : 'bg-success-100 dark:bg-success-900/30 text-success-600')}>
                   <Flag className="w-4 h-4" />
                 </div>
                 <div className="flex-1 min-w-0">
                   <p className="text-sm font-medium truncate">{r.target}</p>
-                  <p className="text-xs text-slate-500">by {r.reporter} · {r.reason}</p>
+                  <p className="text-xs text-stone-500">by {r.reporter} · {r.reason}</p>
                 </div>
                 <StatusBadge status={r.status} />
               </div>

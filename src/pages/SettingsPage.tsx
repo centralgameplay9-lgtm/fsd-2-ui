@@ -40,7 +40,7 @@ export function SettingsPage() {
   const [deleteOpen, setDeleteOpen] = useState(false);
 
   const Toggle = ({ checked, onChange }: { checked: boolean; onChange: () => void }) => (
-    <button onClick={onChange} className={cn('relative w-11 h-6 rounded-full transition', checked ? 'bg-primary-600' : 'bg-slate-300 dark:bg-slate-700')}>
+    <button onClick={onChange} className={cn('relative w-11 h-6 rounded-full transition', checked ? 'bg-primary-600' : 'bg-stone-300 dark:bg-stone-700')}>
       <span className={cn('absolute top-0.5 w-5 h-5 rounded-full bg-white shadow transition', checked ? 'left-5.5' : 'left-0.5')} style={{ left: checked ? '22px' : '2px' }} />
     </button>
   );
@@ -52,7 +52,7 @@ export function SettingsPage() {
         <div className="lg:col-span-1">
           <div className="card p-2 sticky top-20">
             {sections.map((s) => (
-              <button key={s.id} onClick={() => setActiveSection(s.id)} className={cn('w-full flex items-center gap-2.5 px-3 py-2.5 rounded-md text-sm font-medium transition', activeSection === s.id ? 'bg-primary-50 dark:bg-primary-900/30 text-primary-600' : 'hover:bg-slate-50 dark:hover:bg-slate-800 text-slate-600 dark:text-slate-300')}>
+              <button key={s.id} onClick={() => setActiveSection(s.id)} className={cn('w-full flex items-center gap-2.5 px-3 py-2.5 rounded-md text-sm font-medium transition', activeSection === s.id ? 'bg-primary-50 dark:bg-primary-900/30 text-primary-600' : 'hover:bg-stone-50 dark:hover:bg-stone-800 text-stone-600 dark:text-stone-300')}>
                 <s.icon className={cn('w-4 h-4', s.id === 'delete' && 'text-danger-500')} />
                 <span className={cn(s.id === 'delete' && 'text-danger-600')}>{s.label}</span>
               </button>
@@ -66,18 +66,18 @@ export function SettingsPage() {
             <motion.div initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} className="card p-6">
               <h3 className="font-semibold mb-4">Appearance</h3>
               <div className="space-y-4">
-                <div className="flex items-center justify-between p-4 rounded-md border border-slate-200 dark:border-slate-800">
+                <div className="flex items-center justify-between p-4 rounded-md border border-stone-200 dark:border-stone-800">
                   <div>
                     <p className="text-sm font-medium">Dark Mode</p>
-                    <p className="text-xs text-slate-500 mt-0.5">Switch between light and dark themes</p>
+                    <p className="text-xs text-stone-500 mt-0.5">Switch between light and dark themes</p>
                   </div>
                   <Toggle checked={theme === 'dark'} onChange={toggle} />
                 </div>
-                <div className="p-4 rounded-md border border-slate-200 dark:border-slate-800">
+                <div className="p-4 rounded-md border border-stone-200 dark:border-stone-800">
                   <p className="text-sm font-medium mb-3">Accent Color</p>
                   <div className="flex gap-2">
                     {['bg-primary-600', 'bg-accent-500', 'bg-success-500', 'bg-warning-500', 'bg-danger-500'].map((c, i) => (
-                      <button key={i} className={cn('w-8 h-8 rounded-full', c, i === 0 && 'ring-2 ring-offset-2 ring-primary-500 dark:ring-offset-slate-900')} onClick={() => toast('Accent color updated (demo)', 'success')} />
+                      <button key={i} className={cn('w-8 h-8 rounded-full', c, i === 0 && 'ring-2 ring-offset-2 ring-primary-500 dark:ring-offset-stone-900')} onClick={() => toast('Accent color updated (demo)', 'success')} />
                     ))}
                   </div>
                 </div>
@@ -97,10 +97,10 @@ export function SettingsPage() {
                   { key: 'interviews', label: 'Interview Reminders', desc: 'Reminders for upcoming interviews' },
                   { key: 'marketing', label: 'Marketing Emails', desc: 'Tips, news, and product updates' },
                 ].map((item) => (
-                  <div key={item.key} className="flex items-center justify-between p-3 rounded-md border border-slate-200 dark:border-slate-800">
+                  <div key={item.key} className="flex items-center justify-between p-3 rounded-md border border-stone-200 dark:border-stone-800">
                     <div>
                       <p className="text-sm font-medium">{item.label}</p>
-                      <p className="text-xs text-slate-500 mt-0.5">{item.desc}</p>
+                      <p className="text-xs text-stone-500 mt-0.5">{item.desc}</p>
                     </div>
                     <Toggle checked={notifPrefs[item.key as keyof typeof notifPrefs]} onChange={() => { setNotifPrefs((p) => ({ ...p, [item.key]: !p[item.key as keyof typeof notifPrefs] })); toast('Preference updated', 'success'); }} />
                   </div>
@@ -118,8 +118,8 @@ export function SettingsPage() {
                   { label: 'Show Online Status', desc: 'Let others see when you are online' },
                   { label: 'Profile Indexed by Search Engines', desc: 'Allow search engines to index your profile' },
                 ].map((item) => (
-                  <div key={item.label} className="flex items-center justify-between p-3 rounded-md border border-slate-200 dark:border-slate-800">
-                    <div><p className="text-sm font-medium">{item.label}</p><p className="text-xs text-slate-500 mt-0.5">{item.desc}</p></div>
+                  <div key={item.label} className="flex items-center justify-between p-3 rounded-md border border-stone-200 dark:border-stone-800">
+                    <div><p className="text-sm font-medium">{item.label}</p><p className="text-xs text-stone-500 mt-0.5">{item.desc}</p></div>
                     <Toggle checked onChange={() => toast('Privacy setting updated', 'success')} />
                   </div>
                 ))}
@@ -136,9 +136,9 @@ export function SettingsPage() {
                 <div><label className="text-sm font-medium mb-1.5 block">Confirm New Password</label><input type="password" required className="input-base" /></div>
                 <button type="submit" className="btn-primary"><Lock className="w-4 h-4" /> Update Password</button>
               </form>
-              <div className="mt-6 pt-6 border-t border-slate-200 dark:border-slate-800">
+              <div className="mt-6 pt-6 border-t border-stone-200 dark:border-stone-800">
                 <div className="flex items-center justify-between">
-                  <div><p className="text-sm font-medium">Two-Factor Authentication</p><p className="text-xs text-slate-500 mt-0.5">Add an extra layer of security</p></div>
+                  <div><p className="text-sm font-medium">Two-Factor Authentication</p><p className="text-xs text-stone-500 mt-0.5">Add an extra layer of security</p></div>
                   <Toggle checked={false} onChange={() => toast('2FA enabled (demo)', 'success')} />
                 </div>
               </div>

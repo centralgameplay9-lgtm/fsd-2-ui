@@ -12,12 +12,12 @@ interface BadgeProps {
 
 const variants: Record<Variant, string> = {
   primary: 'bg-primary-100 text-primary-700 dark:bg-primary-900/40 dark:text-primary-300',
-  secondary: 'bg-slate-100 text-slate-700 dark:bg-slate-800 dark:text-slate-300',
+  secondary: 'bg-stone-100 text-stone-700 dark:bg-stone-800 dark:text-stone-300',
   success: 'bg-success-100 text-success-700 dark:bg-success-900/40 dark:text-success-300',
   warning: 'bg-warning-100 text-warning-700 dark:bg-warning-900/40 dark:text-warning-300',
   danger: 'bg-danger-100 text-danger-700 dark:bg-danger-900/40 dark:text-danger-300',
-  ghost: 'bg-transparent text-slate-600 dark:text-slate-400',
-  outline: 'border border-slate-300 dark:border-slate-700 text-slate-700 dark:text-slate-300',
+  ghost: 'bg-transparent text-stone-600 dark:text-stone-400',
+  outline: 'border border-stone-300 dark:border-stone-700 text-stone-700 dark:text-stone-300',
 };
 
 export function Badge({ variant = 'secondary', children, className }: BadgeProps) {

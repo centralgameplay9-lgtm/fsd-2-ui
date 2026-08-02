@@ -39,7 +39,7 @@ export function ProfilePage() {
         <div className="px-6 pb-6">
           <div className="flex flex-col sm:flex-row sm:items-end gap-4 -mt-12">
             <div className="relative shrink-0">
-              <img src={currentUser.avatar} alt={currentUser.name} className="w-24 h-24 rounded-full object-cover ring-4 ring-white dark:ring-slate-900" />
+              <img src={currentUser.avatar} alt={currentUser.name} className="w-24 h-24 rounded-full object-cover ring-4 ring-white dark:ring-stone-900" />
               <button className="absolute bottom-1 right-1 p-1.5 rounded-full bg-primary-600 text-white hover:bg-primary-700 transition">
                 <Camera className="w-3.5 h-3.5" />
               </button>
@@ -47,8 +47,8 @@ export function ProfilePage() {
             <div className="flex-1 pb-1">
               <div className="flex items-start justify-between gap-2">
                 <div>
-                  <h2 className="text-xl font-bold">{currentUser.name}</h2>
-                  <p className="text-sm text-slate-500">{currentUser.title}</p>
+                  <h2 className="text-xl font-display font-medium">{currentUser.name}</h2>
+                  <p className="text-sm text-stone-500">{currentUser.title}</p>
                 </div>
                 <button onClick={() => setEditOpen(true)} className="btn-secondary text-xs px-3 py-2">
                   <Pencil className="w-3.5 h-3.5" /> Edit Profile
@@ -57,14 +57,14 @@ export function ProfilePage() {
             </div>
           </div>
 
-          <div className="flex flex-wrap gap-x-5 gap-y-1.5 mt-4 text-sm text-slate-500">
+          <div className="flex flex-wrap gap-x-5 gap-y-1.5 mt-4 text-sm text-stone-500">
             <span className="flex items-center gap-1.5"><MapPin className="w-4 h-4" /> {currentUser.location}</span>
             <span className="flex items-center gap-1.5"><Mail className="w-4 h-4" /> {currentUser.email}</span>
             <span className="flex items-center gap-1.5"><Phone className="w-4 h-4" /> {currentUser.phone}</span>
             <span className="flex items-center gap-1.5"><Globe className="w-4 h-4" /> {currentUser.website}</span>
           </div>
 
-          <p className="text-sm text-slate-600 dark:text-slate-300 mt-4 leading-relaxed max-w-2xl">{currentUser.bio}</p>
+          <p className="text-sm text-stone-600 dark:text-stone-300 mt-4 leading-relaxed max-w-2xl">{currentUser.bio}</p>
 
           <div className="flex flex-wrap gap-1.5 mt-4">
             {currentUser.skills.map((s) => (
@@ -79,7 +79,7 @@ export function ProfilePage() {
         <motion.div initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.05 }} className="card p-5">
           <div className="flex items-center justify-between mb-4">
             <h3 className="font-semibold flex items-center gap-2"><Briefcase className="w-4 h-4 text-primary-500" /> Experience</h3>
-            <button className="p-1.5 rounded-md hover:bg-slate-100 dark:hover:bg-slate-800 transition"><Plus className="w-4 h-4 text-slate-400" /></button>
+            <button className="p-1.5 rounded-md hover:bg-stone-100 dark:hover:bg-stone-800 transition"><Plus className="w-4 h-4 text-stone-400" /></button>
           </div>
           <div className="space-y-4">
             {currentUser.experience.map((exp, i) => (
@@ -90,8 +90,8 @@ export function ProfilePage() {
                 <div>
                   <p className="text-sm font-semibold">{exp.role}</p>
                   <p className="text-xs text-primary-600">{exp.company}</p>
-                  <p className="text-xs text-slate-400">{exp.duration}</p>
-                  <p className="text-xs text-slate-500 mt-1">{exp.description}</p>
+                  <p className="text-xs text-stone-400">{exp.duration}</p>
+                  <p className="text-xs text-stone-500 mt-1">{exp.description}</p>
                 </div>
               </div>
             ))}
@@ -102,7 +102,7 @@ export function ProfilePage() {
         <motion.div initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.1 }} className="card p-5">
           <div className="flex items-center justify-between mb-4">
             <h3 className="font-semibold flex items-center gap-2"><GraduationCap className="w-4 h-4 text-accent-500" /> Education</h3>
-            <button className="p-1.5 rounded-md hover:bg-slate-100 dark:hover:bg-slate-800 transition"><Plus className="w-4 h-4 text-slate-400" /></button>
+            <button className="p-1.5 rounded-md hover:bg-stone-100 dark:hover:bg-stone-800 transition"><Plus className="w-4 h-4 text-stone-400" /></button>
           </div>
           <div className="space-y-4">
             {currentUser.education.map((edu, i) => (
@@ -113,7 +113,7 @@ export function ProfilePage() {
                 <div>
                   <p className="text-sm font-semibold">{edu.degree}</p>
                   <p className="text-xs text-accent-600">{edu.school}</p>
-                  <p className="text-xs text-slate-400">Class of {edu.year}</p>
+                  <p className="text-xs text-stone-400">Class of {edu.year}</p>
                 </div>
               </div>
             ))}
@@ -125,7 +125,7 @@ export function ProfilePage() {
           <h3 className="font-semibold flex items-center gap-2 mb-4"><Award className="w-4 h-4 text-warning-500" /> Certifications</h3>
           <div className="space-y-2">
             {currentUser.certifications.map((cert, i) => (
-              <div key={i} className="flex items-center gap-3 p-2.5 rounded-md bg-slate-50 dark:bg-slate-800/50">
+              <div key={i} className="flex items-center gap-3 p-2.5 rounded-md bg-stone-50 dark:bg-stone-800/50">
                 <Award className="w-4 h-4 text-warning-500 shrink-0" />
                 <span className="text-sm">{cert}</span>
               </div>
@@ -138,7 +138,7 @@ export function ProfilePage() {
           <h3 className="font-semibold flex items-center gap-2 mb-4"><Languages className="w-4 h-4 text-success-500" /> Languages</h3>
           <div className="space-y-2">
             {currentUser.languages.map((lang, i) => (
-              <div key={i} className="flex items-center justify-between p-2.5 rounded-md bg-slate-50 dark:bg-slate-800/50">
+              <div key={i} className="flex items-center justify-between p-2.5 rounded-md bg-stone-50 dark:bg-stone-800/50">
                 <span className="text-sm">{lang.split(' (')[0]}</span>
                 <Badge variant="secondary" className="text-[11px]">{lang.match(/\(([^)]+)\)/)?.[1] || ''}</Badge>
               </div>
@@ -151,8 +151,8 @@ export function ProfilePage() {
           <h3 className="font-semibold flex items-center gap-2 mb-4"><Link2 className="w-4 h-4 text-primary-500" /> Social Links</h3>
           <div className="space-y-2">
             {Object.entries(currentUser.social).map(([key, val]) => (
-              <a key={key} href="#" className="flex items-center gap-3 p-2.5 rounded-md hover:bg-slate-50 dark:hover:bg-slate-800/50 transition group">
-                <span className="text-xs font-semibold uppercase text-slate-400 w-16">{key}</span>
+              <a key={key} href="#" className="flex items-center gap-3 p-2.5 rounded-md hover:bg-stone-50 dark:hover:bg-stone-800/50 transition group">
+                <span className="text-xs font-semibold uppercase text-stone-400 w-16">{key}</span>
                 <span className="text-sm text-primary-600 group-hover:underline">{val}</span>
               </a>
             ))}
@@ -164,7 +164,7 @@ export function ProfilePage() {
           <h3 className="font-semibold mb-4">Portfolio</h3>
           <div className="grid grid-cols-3 gap-2">
             {[1, 2, 3].map((i) => (
-              <div key={i} className="aspect-square rounded-lg bg-gradient-to-br from-slate-100 to-slate-200 dark:from-slate-800 dark:to-slate-700 flex items-center justify-center text-slate-400">
+              <div key={i} className="aspect-square rounded-lg bg-gradient-to-br from-stone-100 to-stone-200 dark:from-stone-800 dark:to-stone-700 flex items-center justify-center text-stone-400">
                 <Plus className="w-6 h-6" />
               </div>
             ))}

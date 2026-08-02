@@ -81,26 +81,26 @@ export function ManageJobsPage() {
       {/* Toolbar */}
       <div className="card p-4 mb-4">
         <div className="flex flex-col sm:flex-row gap-3">
-          <div className="flex-1 flex items-center gap-2 px-3 rounded-md border border-slate-200 dark:border-slate-700">
-            <Search className="w-4 h-4 text-slate-400" />
+          <div className="flex-1 flex items-center gap-2 px-3 rounded-md border border-stone-200 dark:border-stone-700">
+            <Search className="w-4 h-4 text-stone-400" />
             <input type="text" value={search} onChange={(e) => setSearch(e.target.value)} placeholder="Search jobs..." className="w-full bg-transparent py-2 text-sm outline-none" />
           </div>
           <div className="relative">
-            <select value={statusFilter} onChange={(e) => setStatusFilter(e.target.value)} className="appearance-none rounded-md border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 pl-3 pr-8 py-2 text-sm outline-none cursor-pointer">
+            <select value={statusFilter} onChange={(e) => setStatusFilter(e.target.value)} className="appearance-none rounded-md border border-stone-200 dark:border-stone-700 bg-white dark:bg-stone-900 pl-3 pr-8 py-2 text-sm outline-none cursor-pointer">
               <option>All</option>
               <option>Active</option>
               <option>Closed</option>
               <option>Draft</option>
               <option>Expired</option>
             </select>
-            <ChevronDown className="w-4 h-4 text-slate-400 absolute right-2 top-1/2 -translate-y-1/2 pointer-events-none" />
+            <ChevronDown className="w-4 h-4 text-stone-400 absolute right-2 top-1/2 -translate-y-1/2 pointer-events-none" />
           </div>
           <Link to="/employer/post-job" className="btn-primary text-sm whitespace-nowrap"><PlusCircle className="w-4 h-4" /> Post Job</Link>
         </div>
 
         {selected.length > 0 && (
-          <motion.div initial={{ opacity: 0, y: -8 }} animate={{ opacity: 1, y: 0 }} className="flex items-center justify-between mt-3 pt-3 border-t border-slate-200 dark:border-slate-800">
-            <span className="text-sm text-slate-600 dark:text-slate-300">{selected.length} selected</span>
+          <motion.div initial={{ opacity: 0, y: -8 }} animate={{ opacity: 1, y: 0 }} className="flex items-center justify-between mt-3 pt-3 border-t border-stone-200 dark:border-stone-800">
+            <span className="text-sm text-stone-600 dark:text-stone-300">{selected.length} selected</span>
             <button onClick={() => setDeleteOpen(true)} className="btn text-sm text-danger-600 hover:bg-danger-50 dark:hover:bg-danger-900/20 px-3 py-1.5"><Trash2 className="w-4 h-4" /> Delete Selected</button>
           </motion.div>
         )}
@@ -111,7 +111,7 @@ export function ManageJobsPage() {
         <div className="overflow-x-auto">
           <table className="w-full text-sm">
             <thead>
-              <tr className="border-b border-slate-200 dark:border-slate-800 bg-slate-50/50 dark:bg-slate-800/30">
+              <tr className="border-b border-stone-200 dark:border-stone-800 bg-stone-50/50 dark:bg-stone-800/30">
                 <th className="px-4 py-3 text-left w-10">
                   <input type="checkbox" checked={selected.length === paginated.length && paginated.length > 0} onChange={toggleSelectAll} className="w-4 h-4 rounded accent-primary-600" />
                 </th>
@@ -139,31 +139,31 @@ export function ManageJobsPage() {
               {paginated.map((job) => {
                 const company = companies.find((c) => c.id === job.companyId);
                 return (
-                  <tr key={job.id} className="border-b border-slate-100 dark:border-slate-800/50 hover:bg-slate-50/50 dark:hover:bg-slate-800/30 transition">
+                  <tr key={job.id} className="border-b border-stone-100 dark:border-stone-800/50 hover:bg-stone-50/50 dark:hover:bg-stone-800/30 transition">
                     <td className="px-4 py-3">
                       <input type="checkbox" checked={selected.includes(job.id)} onChange={() => toggleSelect(job.id)} className="w-4 h-4 rounded accent-primary-600" />
                     </td>
                     <td className="px-4 py-3">
                       <div className="flex items-center gap-2.5">
-                        <div className="w-8 h-8 rounded-md bg-slate-100 dark:bg-slate-800 overflow-hidden shrink-0">
+                        <div className="w-8 h-8 rounded-md bg-stone-100 dark:bg-stone-800 overflow-hidden shrink-0">
                           {company?.logo && <img src={company.logo} alt="" className="w-full h-full object-cover" />}
                         </div>
                         <div>
                           <p className="font-medium">{job.title}</p>
-                          <p className="text-xs text-slate-500">{company?.name}</p>
+                          <p className="text-xs text-stone-500">{company?.name}</p>
                         </div>
                       </div>
                     </td>
-                    <td className="px-4 py-3 text-slate-500 hidden md:table-cell">{job.location}</td>
+                    <td className="px-4 py-3 text-stone-500 hidden md:table-cell">{job.location}</td>
                     <td className="px-4 py-3">
                       <span className="font-medium">{job.applicants}</span>
                     </td>
                     <td className="px-4 py-3 hidden sm:table-cell"><StatusBadge status={job.status} /></td>
-                    <td className="px-4 py-3 text-slate-500 hidden lg:table-cell">{formatDate(job.postedAt)}</td>
+                    <td className="px-4 py-3 text-stone-500 hidden lg:table-cell">{formatDate(job.postedAt)}</td>
                     <td className="px-4 py-3">
                       <div className="flex items-center justify-end gap-1">
-                        <Link to={`/jobs/${job.id}`} className="p-1.5 rounded-md hover:bg-slate-100 dark:hover:bg-slate-700 transition"><Eye className="w-4 h-4 text-slate-500" /></Link>
-                        <Link to="/employer/post-job" className="p-1.5 rounded-md hover:bg-slate-100 dark:hover:bg-slate-700 transition"><Pencil className="w-4 h-4 text-slate-500" /></Link>
+                        <Link to={`/jobs/${job.id}`} className="p-1.5 rounded-md hover:bg-stone-100 dark:hover:bg-stone-700 transition"><Eye className="w-4 h-4 text-stone-500" /></Link>
+                        <Link to="/employer/post-job" className="p-1.5 rounded-md hover:bg-stone-100 dark:hover:bg-stone-700 transition"><Pencil className="w-4 h-4 text-stone-500" /></Link>
                         <button onClick={() => { setDeleteTarget(job.id); setDeleteOpen(true); }} className="p-1.5 rounded-md hover:bg-danger-50 dark:hover:bg-danger-900/20 transition"><Trash2 className="w-4 h-4 text-danger-500" /></button>
                       </div>
                     </td>
@@ -179,14 +179,14 @@ export function ManageJobsPage() {
         )}
 
         {totalPages > 1 && (
-          <div className="p-4 border-t border-slate-200 dark:border-slate-800">
+          <div className="p-4 border-t border-stone-200 dark:border-stone-800">
             <Pagination currentPage={page} totalPages={totalPages} onPageChange={setPage} />
           </div>
         )}
       </div>
 
       <Modal open={deleteOpen} onClose={() => setDeleteOpen(false)} title="Delete Job?">
-        <p className="text-sm text-slate-600 dark:text-slate-300">Are you sure you want to delete this job posting? This action cannot be undone. All applicant data associated with this job will also be removed.</p>
+        <p className="text-sm text-stone-600 dark:text-stone-300">Are you sure you want to delete this job posting? This action cannot be undone. All applicant data associated with this job will also be removed.</p>
         <div className="flex gap-2 mt-6">
           <button onClick={() => setDeleteOpen(false)} className="btn-outline flex-1">Cancel</button>
           <button onClick={handleDelete} className="btn bg-danger-600 hover:bg-danger-700 text-white px-5 py-2.5 rounded-lg flex-1">Delete</button>

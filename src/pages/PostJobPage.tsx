@@ -54,12 +54,12 @@ export function PostJobPage() {
           {steps.map((s, i) => (
             <div key={s} className="flex items-center flex-1 last:flex-none">
               <button onClick={() => i < step && setStep(i)} className="flex items-center gap-2 group">
-                <div className={cn('w-9 h-9 rounded-full flex items-center justify-center text-sm font-semibold transition', i < step ? 'bg-success-500 text-white' : i === step ? 'bg-primary-600 text-white' : 'bg-slate-200 dark:bg-slate-800 text-slate-400')}>
+                <div className={cn('w-9 h-9 rounded-full flex items-center justify-center text-sm font-semibold transition', i < step ? 'bg-success-500 text-white' : i === step ? 'bg-primary-600 text-white' : 'bg-stone-200 dark:bg-stone-800 text-stone-400')}>
                   {i < step ? <Check className="w-4 h-4" /> : i + 1}
                 </div>
-                <span className={cn('text-sm font-medium hidden sm:block', i === step ? 'text-primary-600' : 'text-slate-400')}>{s}</span>
+                <span className={cn('text-sm font-medium hidden sm:block', i === step ? 'text-primary-600' : 'text-stone-400')}>{s}</span>
               </button>
-              {i < steps.length - 1 && <div className={cn('flex-1 h-0.5 mx-2 rounded transition', i < step ? 'bg-success-500' : 'bg-slate-200 dark:bg-slate-800')} />}
+              {i < steps.length - 1 && <div className={cn('flex-1 h-0.5 mx-2 rounded transition', i < step ? 'bg-success-500' : 'bg-stone-200 dark:bg-stone-800')} />}
             </div>
           ))}
         </div>
@@ -68,7 +68,7 @@ export function PostJobPage() {
           <AnimatePresence mode="wait">
             {step === 0 && (
               <motion.div key="step0" initial={{ opacity: 0, x: 20 }} animate={{ opacity: 1, x: 0 }} exit={{ opacity: 0, x: -20 }} className="space-y-4">
-                <h2 className="text-lg font-semibold">Basic Information</h2>
+                <h2 className="text-lg font-display font-medium">Basic Information</h2>
                 <div>
                   <label className="text-sm font-medium mb-1.5 block">Job Title *</label>
                   <input type="text" value={formData.title} onChange={(e) => update('title', e.target.value)} placeholder="e.g. Senior Frontend Engineer" className="input-base" />
@@ -96,7 +96,7 @@ export function PostJobPage() {
             )}
             {step === 1 && (
               <motion.div key="step1" initial={{ opacity: 0, x: 20 }} animate={{ opacity: 1, x: 0 }} exit={{ opacity: 0, x: -20 }} className="space-y-4">
-                <h2 className="text-lg font-semibold">Details</h2>
+                <h2 className="text-lg font-display font-medium">Details</h2>
                 <div className="grid sm:grid-cols-2 gap-4">
                   <div>
                     <label className="text-sm font-medium mb-1.5 block">Minimum Salary ($)</label>
@@ -121,7 +121,7 @@ export function PostJobPage() {
                   <label className="text-sm font-medium mb-1.5 block">Work Mode</label>
                   <div className="grid grid-cols-3 gap-2">
                     {['Remote', 'Hybrid', 'On-site'].map((m) => (
-                      <button key={m} onClick={() => update('workMode', m)} className={cn('py-2.5 rounded-md text-sm font-medium border transition', formData.workMode === m ? 'border-primary-500 bg-primary-50 dark:bg-primary-900/30 text-primary-600' : 'border-slate-200 dark:border-slate-700 hover:border-primary-300')}>
+                      <button key={m} onClick={() => update('workMode', m)} className={cn('py-2.5 rounded-md text-sm font-medium border transition', formData.workMode === m ? 'border-primary-500 bg-primary-50 dark:bg-primary-900/30 text-primary-600' : 'border-stone-200 dark:border-stone-700 hover:border-primary-300')}>
                         {m}
                       </button>
                     ))}
@@ -135,7 +135,7 @@ export function PostJobPage() {
             )}
             {step === 2 && (
               <motion.div key="step2" initial={{ opacity: 0, x: 20 }} animate={{ opacity: 1, x: 0 }} exit={{ opacity: 0, x: -20 }} className="space-y-4">
-                <h2 className="text-lg font-semibold">Requirements & Benefits</h2>
+                <h2 className="text-lg font-display font-medium">Requirements & Benefits</h2>
                 <div>
                   <label className="text-sm font-medium mb-1.5 block">Required Skills (comma-separated)</label>
                   <input type="text" value={formData.skills} onChange={(e) => update('skills', e.target.value)} placeholder="React, TypeScript, Node.js" className="input-base" />
@@ -152,10 +152,10 @@ export function PostJobPage() {
             {step === 3 && (
               <motion.div key="step3" initial={{ opacity: 0, x: 20 }} animate={{ opacity: 1, x: 0 }} exit={{ opacity: 0, x: -20 }} className="space-y-4">
                 <div className="flex items-center justify-between">
-                  <h2 className="text-lg font-semibold">Preview</h2>
+                  <h2 className="text-lg font-display font-medium">Preview</h2>
                   <button onClick={() => setPreview(!preview)} className="btn-ghost text-xs"><Eye className="w-4 h-4" /> {preview ? 'Hide' : 'Show'} Preview</button>
                 </div>
-                <div className="rounded-lg border border-slate-200 dark:border-slate-800 overflow-hidden">
+                <div className="rounded-lg border border-stone-200 dark:border-stone-800 overflow-hidden">
                   <div className="p-5">
                     <div className="flex items-start gap-3">
                       <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-primary-600 to-accent-500 flex items-center justify-center text-white shrink-0">
@@ -163,8 +163,8 @@ export function PostJobPage() {
                       </div>
                       <div className="flex-1">
                         <h3 className="font-semibold">{formData.title || 'Job Title'}</h3>
-                        <p className="text-sm text-slate-500">Stripe</p>
-                        <div className="flex flex-wrap gap-x-4 gap-y-1 mt-2 text-xs text-slate-500">
+                        <p className="text-sm text-stone-500">Stripe</p>
+                        <div className="flex flex-wrap gap-x-4 gap-y-1 mt-2 text-xs text-stone-500">
                           <span className="flex items-center gap-1"><MapPin className="w-3.5 h-3.5" /> {formData.location || 'Location'}</span>
                           <span className="flex items-center gap-1"><BriefcaseIcon className="w-3.5 h-3.5" /> {formData.type}</span>
                           <span className="flex items-center gap-1"><DollarSign className="w-3.5 h-3.5" /> {formData.salaryMin && formData.salaryMax ? `$${formData.salaryMin}k - $${formData.salaryMax}k` : 'Salary'}</span>
@@ -172,13 +172,13 @@ export function PostJobPage() {
                         </div>
                         <div className="flex flex-wrap gap-1.5 mt-3">
                           <span className="badge bg-primary-100 text-primary-700 dark:bg-primary-900/40 dark:text-primary-300">{formData.workMode}</span>
-                          {formData.category && <span className="badge bg-slate-100 text-slate-700 dark:bg-slate-800 dark:text-slate-300">{formData.category}</span>}
+                          {formData.category && <span className="badge bg-stone-100 text-stone-700 dark:bg-stone-800 dark:text-stone-300">{formData.category}</span>}
                         </div>
                       </div>
                     </div>
                     {formData.description && (
-                      <div className="mt-4 pt-4 border-t border-slate-100 dark:border-slate-800/50">
-                        <p className="text-sm text-slate-600 dark:text-slate-300">{formData.description}</p>
+                      <div className="mt-4 pt-4 border-t border-stone-100 dark:border-stone-800/50">
+                        <p className="text-sm text-stone-600 dark:text-stone-300">{formData.description}</p>
                       </div>
                     )}
                   </div>
@@ -188,7 +188,7 @@ export function PostJobPage() {
           </AnimatePresence>
 
           {/* Navigation */}
-          <div className="flex items-center justify-between mt-6 pt-5 border-t border-slate-200 dark:border-slate-800">
+          <div className="flex items-center justify-between mt-6 pt-5 border-t border-stone-200 dark:border-stone-800">
             <button onClick={prev} disabled={step === 0} className="btn-secondary disabled:opacity-40 disabled:cursor-not-allowed">
               <ChevronLeft className="w-4 h-4" /> Previous
             </button>
