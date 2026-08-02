@@ -88,9 +88,9 @@ export const categories = [
   { name: 'Marketing', icon: 'Megaphone', count: 420, color: 'success' },
   { name: 'Finance', icon: 'TrendingUp', count: 380, color: 'warning' },
   { name: 'Healthcare', icon: 'HeartPulse', count: 610, color: 'danger' },
-  { name: 'Education', icon: 'GraduationCap', count: 290, color: 'primary' },
-  { name: 'Sales', icon: 'Target', count: 470, color: 'accent' },
-  { name: 'Engineering', icon: 'Cog', count: 820, color: 'success' },
+  { name: 'Education', icon: 'GraduationCap', count: 290, color: 'success' },
+  { name: 'Sales', icon: 'Target', count: 470, color: 'primary' },
+  { name: 'Engineering', icon: 'Cog', count: 820, color: 'warning' },
 ];
 
 export const companies: Company[] = [

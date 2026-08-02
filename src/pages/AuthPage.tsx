@@ -175,7 +175,7 @@ export function AuthPage({ mode }: { mode: AuthMode }) {
       </div>
 
       {/* Right: illustration */}
-      <div className="hidden lg:flex flex-1 relative overflow-hidden bg-gradient-to-br from-primary-600 via-primary-700 to-accent-700 items-center justify-center p-12">
+      <div className="hidden lg:flex flex-1 relative overflow-hidden bg-gradient-to-br from-primary-500 via-primary-600 to-accent-600 items-center justify-center p-12">
         <div className="absolute inset-0 opacity-20">
           <div className="absolute top-20 left-20 w-72 h-72 bg-white rounded-full blur-3xl animate-float" />
           <div className="absolute bottom-20 right-20 w-96 h-96 bg-accent-300 rounded-full blur-3xl animate-float" style={{ animationDelay: '2s' }} />

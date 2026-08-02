@@ -72,19 +72,19 @@
     text-wrap: balance;
   }
   .gradient-text {
-    @apply bg-gradient-to-r from-primary-600 to-accent-600 bg-clip-text text-transparent;
+    @apply bg-gradient-to-r from-primary-600 via-primary-500 to-accent-500 bg-clip-text text-transparent;
   }
   .gradient-mesh {
     background-image:
-      radial-gradient(at 20% 20%, rgba(193, 84, 55, 0.12) 0px, transparent 50%),
-      radial-gradient(at 80% 0%, rgba(27, 103, 89, 0.10) 0px, transparent 50%),
-      radial-gradient(at 0% 80%, rgba(217, 119, 87, 0.08) 0px, transparent 50%);
+      radial-gradient(at 20% 20%, rgba(242, 92, 26, 0.14) 0px, transparent 50%),
+      radial-gradient(at 80% 0%, rgba(237, 176, 40, 0.12) 0px, transparent 50%),
+      radial-gradient(at 0% 80%, rgba(159, 201, 47, 0.08) 0px, transparent 50%);
   }
   .dark .gradient-mesh {
     background-image:
-      radial-gradient(at 20% 20%, rgba(193, 84, 55, 0.18) 0px, transparent 50%),
-      radial-gradient(at 80% 0%, rgba(27, 103, 89, 0.12) 0px, transparent 50%),
-      radial-gradient(at 0% 80%, rgba(217, 119, 87, 0.10) 0px, transparent 50%);
+      radial-gradient(at 20% 20%, rgba(242, 92, 26, 0.20) 0px, transparent 50%),
+      radial-gradient(at 80% 0%, rgba(237, 176, 40, 0.14) 0px, transparent 50%),
+      radial-gradient(at 0% 80%, rgba(159, 201, 47, 0.10) 0px, transparent 50%);
   }
   .font-display {
     font-family: 'Fraunces', Georgia, serif;

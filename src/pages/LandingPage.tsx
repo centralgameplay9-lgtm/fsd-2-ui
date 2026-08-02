@@ -344,7 +344,7 @@ export function LandingPage() {
       {/* Newsletter */}
       <section className="py-16 sm:py-24">
         <div className="max-w-3xl mx-auto px-4 sm:px-6">
-          <div className="relative overflow-hidden rounded-2xl bg-gradient-to-br from-primary-600 to-accent-700 p-8 sm:p-12 text-center">
+          <div className="relative overflow-hidden rounded-2xl bg-gradient-to-br from-primary-500 via-primary-600 to-accent-600 p-8 sm:p-12 text-center">
             <div className="absolute inset-0 opacity-10">
               <div className="absolute top-0 right-0 w-40 h-40 bg-white rounded-full blur-3xl" />
               <div className="absolute bottom-0 left-0 w-40 h-40 bg-white rounded-full blur-3xl" />
